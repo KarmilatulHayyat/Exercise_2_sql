@@ -17,10 +17,8 @@ import java.util.ArrayList;
 import java.util.HashMap;
 
 public class MainActivity extends AppCompatActivity {
-
     private RecyclerView recyclerView;
     private TemanAdapter adapter;
-    //    untuk menampung data teman
     private ArrayList<Teman> temanArrayList;
     DBController controller = new DBController(this);
     String id,nm,tlp;
@@ -31,12 +29,14 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        recyclerView = findViewById(R.id.recyclerview);
-        bacaData();
+        recyclerView = findViewById(R.id.recycleview);
+        fab = findViewById(R.id.floatingBtn);
+        BacaData();
         adapter = new TemanAdapter(temanArrayList);
         RecyclerView.LayoutManager layoutManager = new LinearLayoutManager(MainActivity.this);
         recyclerView.setLayoutManager(layoutManager);
         recyclerView.setAdapter(adapter);
+
 
         fab.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -45,25 +45,21 @@ public class MainActivity extends AppCompatActivity {
                 startActivity(intent);
             }
         });
-
     }
 
-    public void bacaData(){
+    public void BacaData(){
         ArrayList<HashMap<String,String>> daftarTeman = controller.getAllTeman();
         temanArrayList = new ArrayList<>();
-//        memindahkan dari hasil query kedalam teman
-        for (int i = 0; i<daftarTeman.size();i++){
+
+        //memindah dari hasil query kedalam Teman
+        for (int i=0;i<daftarTeman.size();i++){
             Teman teman = new Teman();
 
             teman.setId(daftarTeman.get(i).get("id").toString());
-            teman.setId(daftarTeman.get(i).get("nama").toString());
-            teman.setId(daftarTeman.get(i).get("telpon").toString());
-
-//          pindahkan dari teman ke dalam Arraylist teman di adapter
+            teman.setNama(daftarTeman.get(i).get("nama").toString());
+            teman.setTelpon(daftarTeman.get(i).get("telpon").toString());
+            //pindahkan dari Teman kedalma Arraylist teman di adapter
             temanArrayList.add(teman);
-
         }
-
     }
-
 }
