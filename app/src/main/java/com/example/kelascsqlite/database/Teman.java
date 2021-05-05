@@ -6,6 +6,7 @@ public class Teman {
     String telpon;
 
     public Teman() {
+
     }
 
     public Teman(String id, String nama, String telpon) {
