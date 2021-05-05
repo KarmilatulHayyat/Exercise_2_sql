@@ -69,6 +69,4 @@ public class DBController extends SQLiteOpenHelper {
         db.close();
         return daftarTeman;
     }
-
-
 }
