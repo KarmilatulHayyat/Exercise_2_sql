@@ -28,6 +28,8 @@ import com.example.kelascsqlite.database.Teman;
 import java.util.ArrayList;
 import java.util.HashMap;
 
+
+
 public class TemanAdapter extends RecyclerView.Adapter<TemanAdapter.TemanViewHolder> {
     private ArrayList<Teman> listData;
     private Context c;

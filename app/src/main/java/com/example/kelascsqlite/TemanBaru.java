@@ -19,6 +19,7 @@ public class TemanBaru extends AppCompatActivity {
     String nm,tlp;
     DBController controller = new DBController(this);
 
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
