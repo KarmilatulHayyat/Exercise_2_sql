@@ -5,7 +5,6 @@ public class Teman {
     String nama;
     String telpon;
 
-
     public Teman() {
 
     }

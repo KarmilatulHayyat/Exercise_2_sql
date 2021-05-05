@@ -1,5 +1,4 @@
 <resources>
-
     <string name="app_name">KelasCsqlite</string>
     <string name="deletedata">Delete Data</string>
     <string name="editdata">Edit Data</string>

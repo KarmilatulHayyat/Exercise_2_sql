@@ -38,7 +38,6 @@ public class EditTeman extends AppCompatActivity {
         tNama.setText(nm);
         tTelp.setText(tlp);
 
-
         saveBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
